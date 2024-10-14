@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 export const Sidebar = () => {
 
     const [open, setOpen] = useState(false);
-    const items = ["Homepage", "Services", "Portfolio", "Contact", "About"]
     const variants = {
         open: {
             clipPath: "circle(1200px at 50px 50px)",
@@ -47,29 +46,7 @@ export const Sidebar = () => {
         }
     };
 
-    const ListVariants = {
-        open: {
-            transition: {
-                staggerChildren: 0.1
-            }
-        },
-        closed: {
-            transition: {
-                staggerChildren: 0.05,
-                staggerDirection: -1
-            }
-        }
-    };
-    const itemVariants = {
-        open: {
-            y: 0,
-            opacity: 1
-        },
-        close: {
-            y: 50,
-            opacity: 0
-        }
-    }
+   
     return (
         <motion.div className="sidebar" animate={open ? "open" : "closed"}>
             <motion.div className="bg2" variants={variants2}>

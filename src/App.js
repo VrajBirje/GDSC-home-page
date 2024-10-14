@@ -1,7 +1,7 @@
 import "./app.scss"
+import { About } from "./components/AboutUs/About";
 import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
-import { About } from "./components/AboutUs/About";
 import { Vision } from "./components/Vision/Vision";
 import { WeDo } from "./components/WeDo/WeDo";
 

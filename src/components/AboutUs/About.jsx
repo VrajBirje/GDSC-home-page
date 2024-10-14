@@ -1,6 +1,6 @@
 import './about.scss'
-import React, { useRef, useState, useEffect } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const variants = {
   initial: {
@@ -79,25 +79,18 @@ export const About = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
-    // Check if the device width is below a certain breakpoint
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 768); 
     };
-
-    // Initial check on mount
     handleResize();
-
-    // Listen for window resize events
     window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  const redirectToSite = (url) => {
-    window.location.href = url; // Use the provided URL for redirection
-  };
+  // const redirectToSite = (url) => {
+  //   window.location.href = url; // Use the provided URL for redirection
+  // };
   return (
     <motion.div className='skills'
       variants={variants}
@@ -147,7 +140,6 @@ export const About = () => {
               onMouseLeave={() => setHoveredIndex(null)}
               variants={variants2}
               animate={!isMobile ? (hoveredIndex === index ? "hovered" : hoveredIndex !== null ? "reduced" : "initial") : ""}
-            // whileHover={{ background: "lightgray", color: "black" }}
             >
               <motion.h1>{item.title}</motion.h1>
               <motion.p>{item.description}</motion.p>

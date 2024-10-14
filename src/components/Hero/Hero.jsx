@@ -55,20 +55,6 @@ const imageVariants = {
     }
 };
 
-const Variants = {
-    initial: {
-        x: 0,
-    },
-    animate: {
-        x: "-220%",
-        transition: {
-            repeat: Infinity,
-            repeatType: "mirror",
-            duration: 20,
-        },
-    },
-};
-
 export const Hero = () => {
     // Use Framer Motion's useCycle to alternate between 'big' and 'small'
     const [animationState, cycleAnimationState] = useCycle("big", "small");

@@ -6,11 +6,8 @@
     flex-direction: column;
     justify-content: space-between;
     background-image: url('./Loading.png');
-    /* Replace with the actual path to your image */
     background-size: cover;
-    /* Ensures the image covers the entire container */
     background-position: center;
-    /* Centers the image */
     background-repeat: no-repeat;
 
     .textContainer {
@@ -185,7 +182,8 @@
                     #FBBC05,
                     #34A853);
             padding: 10px;
-            @include mobile{
+
+            @include mobile {
                 padding: 5px;
                 // height: 160px !important;
             }
@@ -206,12 +204,6 @@
                     width: 90%;
                 }
 
-                p {
-                    // @include mobile{
-                    //     display: none;
-                    // }
-                }
-
                 button {
                     padding: 10px;
                     background-color: orange;
@@ -226,6 +218,7 @@
         }
 
     }
+
     .shapes {
         @include mobile {
             display: none;

@@ -1,6 +1,6 @@
 import './vision.scss'
-import React, { useRef, useState, useEffect } from 'react'
-import { motion, useInView } from 'framer-motion'
+import React, {  useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 const variants = {
     initial: {
@@ -20,19 +20,6 @@ const variants = {
 }
 
 
-const Variants = {
-    initial: {
-        x: 0,
-    },
-    animate: {
-        x: "-20%",
-        transition: {
-            repeat: Infinity,
-            repeatType: "mirror",
-            duration: 2,
-        },
-    },
-};
 
 const shapes = {
     float: {
@@ -98,39 +85,38 @@ const textVariants = {
     }
 };
 
+const borderAnimation = {
+    borderImage: [
+        "linear-gradient(90deg, #4285F4, #EA4335, #FBBC05, #34A853) 1",
+        "linear-gradient(180deg, #4285F4, #EA4335, #FBBC05, #34A853) 1",
+        "linear-gradient(270deg, #4285F4, #EA4335, #FBBC05, #34A853) 1",
+        "linear-gradient(360deg, #4285F4, #EA4335, #FBBC05, #34A853) 1"
+    ],
+    transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "linear"
+    }
+};
+
 export const Vision = () => {
     const [isMobile, setIsMobile] = useState(false);
-    const [hoveredIndex, setHoveredIndex] = useState(null);
 
     useEffect(() => {
-        // Check if the device width is below a certain breakpoint
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+            setIsMobile(window.innerWidth <= 768); 
         };
-
-        // Initial check on mount
         handleResize();
-
-        // Listen for window resize events
         window.addEventListener('resize', handleResize);
-
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    const redirectToSite = (url) => {
-        window.location.href = url; // Use the provided URL for redirection
-    };
+    // const redirectToSite = (url) => {
+    //     window.location.href = url; // Use the provided URL for redirection
+    // };
     return (
         <motion.div className='skills'
-        // variants={variants}
-        // initial="initial"
-        // // animate="animate"
-        // // whileInView="animate"
-        // style={{ position: "relative" }}
-        // animate={isMobile ? "animate" : "initial"}
-        // whileInView={!isMobile && "animate"}
         >
             <motion.div className="titleContainer" variants={variants}>
                 <motion.div className="title">
@@ -140,7 +126,7 @@ export const Vision = () => {
                     </motion.div>
                     <motion.img src='/gdsc3.png' style={{ objectFit: "contain" }} alt='' variants={shapes2} animate={!isMobile ? "float" : ""}></motion.img>
                 </motion.div>
-                <motion.div className='linear' variants={Variants} initial="initial" animate="animate">
+                <motion.div className='linear' animate={borderAnimation} >
                 </motion.div>
                 <div className='visionTxt'>
                     <p>GDSC DJCSE is inspired by the Google Developer's Family.</p>
@@ -216,7 +202,7 @@ export const Vision = () => {
             </motion.div>
             <motion.img className='shapes' src="./Rectangle1.png" alt="" style={{ position: "absolute", left: "7%", top: 250 }} variants={shapes3} animate="float" />
             <motion.img className='shapes' src="./Rectangle2.png" alt="" style={{ position: "absolute", right: "5%", bottom: "35%" }} variants={shapes3} animate="float" />
-            <motion.img className='shapes' src="./Ellipse.png" alt="" style={{ position: "absolute", right: "15%", top: 100 }} variants={shapes3} animate="float" />
+            <motion.img className='shapes' src="./Ellipse.png" alt="" style={{ position: "absolute", right: "15%", top: 80 }} variants={shapes3} animate="float" />
             <motion.img className='shapes' src="./triangle.png" alt="" style={{ position: "absolute", left: 90, bottom: 120 }} variants={shapes3} animate="float" />
             <motion.img className='shapes' src="./triangle.png" alt="" style={{ position: "absolute", left: "15%", top: 70 }} variants={shapes3} animate="float" />
         </motion.div>
