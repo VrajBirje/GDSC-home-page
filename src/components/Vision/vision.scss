@@ -1,0 +1,185 @@
+@import '../../app.scss';
+
+.skills {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('./Loading.png');
+    /* Replace with the actual path to your image */
+    background-size: cover;
+    /* Ensures the image covers the entire container */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    .titleContainer {
+        margin-top: 80px;
+        flex: 2;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-direction: column;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .linear {
+            background: linear-gradient(90deg,
+                    #4285F4,
+                    #EA4335,
+                    #FBBC05,
+                    #34A853,
+                    #4285F4,
+                    #EA4335,
+                    #FBBC05,
+                    #34A853,
+                );
+            height: 10px;
+            width: 220%;
+        }
+
+        .visionTxt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            @include mobile{
+                gap: 3px;
+                font-size: 12px;
+            }
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            img {
+                // width: 250px;
+                height: 75px;
+                // border-radius: 50px;
+                object-fit: cover;
+
+                @include mobile {
+                    // width: 200px;
+                    height: 50px;
+                    display: none;
+                }
+            }
+
+            .aboutUs {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
+                h1 {
+                    font-size: 56px;
+                    font-weight: 100;
+                    color: black;
+
+                    @include mobile {
+                        font-size: 36px;
+                    }
+                }
+            }
+        }
+
+        .cardHolder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+
+            @include mobile {
+                flex-wrap: wrap;
+            }
+
+            .card {
+                @include mobile {
+                    width: 150px;
+                    height: 250px;
+                }
+
+                width: 250px;
+                height: 350px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(90deg,
+                    #4285F4,
+                    #EA4335,
+                    #FBBC05,
+                    #34A853,
+                );
+                ;
+                position: relative;
+                overflow: hidden;
+
+                .cardImg {
+                    width: 94%;
+                    height: 94%;
+                    object-fit: cover;
+                    position: absolute;
+                    border-radius: 12px;
+                }
+
+                .cardBody {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    right: -100%;
+                    position: absolute;
+                    background: #1f3d4738;
+                    backdrop-filter: blur(5px);
+                    border-radius: 15px;
+                    color: white;
+                    padding: 30px;
+                    @include mobile{
+                        padding: 10px;
+                    }
+                    transition: 1s;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 20px;
+
+                    p {
+                        text-align: center;
+                        @include mobile {
+                            font-size: 12px;
+                        }
+                    }
+                    h1{
+                        text-align: center;
+                        @include mobile {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .card:hover .cardBody {
+                right: 0;
+            }
+        }
+    }
+
+    .shapes {
+        @include mobile {
+            display: none;
+        }
+    }
+}

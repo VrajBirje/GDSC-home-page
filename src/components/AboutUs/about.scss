@@ -1,0 +1,234 @@
+@import '../../app.scss';
+
+.skills {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('./Loading.png');
+    /* Replace with the actual path to your image */
+    background-size: cover;
+    /* Ensures the image covers the entire container */
+    background-position: center;
+    /* Centers the image */
+    background-repeat: no-repeat;
+
+    .textContainer {
+        flex: 1;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+
+        @include mobile {
+            padding-top: 40px;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        p {
+            font-weight: 200;
+            font-size: 20px;
+            color: gray;
+            text-align: right;
+
+            @include mobile {
+                font-size: 17px;
+            }
+        }
+
+        hr {
+            width: 400px;
+            border: none;
+            border-top: 0.5px solid gray;
+
+            @include mobile {
+                width: 300px;
+            }
+        }
+    }
+
+    .titleContainer {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include mobile {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            img {
+                // width: 250px;
+                height: 75px;
+                // border-radius: 50px;
+                object-fit: cover;
+
+                @include mobile {
+                    // width: 200px;
+                    height: 50px;
+                    display: none;
+                }
+            }
+
+            .aboutUs {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
+                h1 {
+                    font-size: 56px;
+                    font-weight: 100;
+                    color: #4285F4;
+
+                    @include mobile {
+                        font-size: 36px;
+                    }
+                }
+
+                .title2 {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 40px;
+
+                    .h1d {
+                        font-size: 56px;
+                        font-weight: 600;
+                        color: #FBBC05;
+
+                        @include mobile {
+                            font-size: 36px;
+                        }
+                    }
+
+                    .h1c {
+                        font-size: 56px;
+                        font-weight: 100;
+                        color: #34A853;
+
+                        @include mobile {
+                            font-size: 36px;
+                        }
+                    }
+
+                    .h1b {
+                        font-size: 56px;
+                        font-weight: 100;
+                        color: #4285F4;
+
+                        @include mobile {
+                            font-size: 36px;
+                        }
+                    }
+
+                    .h1a {
+                        font-size: 56px;
+                        font-weight: 600;
+                        color: #EA4335;
+
+                        @include mobile {
+                            font-size: 36px;
+                        }
+                    }
+                }
+            }
+
+            button {
+                width: 250px;
+                height: 75px;
+                border-radius: 50px;
+                background-color: orange;
+                font-size: 24px;
+                cursor: pointer;
+                border: none;
+
+                @include mobile {
+                    width: 150px;
+                    height: 50px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .listContainer {
+        flex: 2;
+        display: flex;
+        max-width: 1200px;
+        margin: auto;
+        align-items: flex-end;
+
+        @include mobile {
+            flex-direction: column;
+            width: 100%;
+            padding-bottom: 40px;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .box2 {
+            background: linear-gradient(180deg,
+                    #4285F4,
+                    #EA4335,
+                    #FBBC05,
+                    #34A853);
+            padding: 10px;
+            @include mobile{
+                padding: 5px;
+                // height: 160px !important;
+            }
+
+            .box {
+                padding: 50px;
+                border: 0.5px solid gray;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 20px;
+                background-color: white;
+
+                @include mobile {
+                    border: none;
+                    padding: 10px;
+                    text-align: center;
+                    width: 90%;
+                }
+
+                p {
+                    // @include mobile{
+                    //     display: none;
+                    // }
+                }
+
+                button {
+                    padding: 10px;
+                    background-color: orange;
+                    border: none;
+                    cursor: pointer;
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+    .shapes {
+        @include mobile {
+            display: none;
+        }
+    }
+}
